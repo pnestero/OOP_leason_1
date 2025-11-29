@@ -22,6 +22,6 @@ def tests2_category():
 @pytest.fixture
 def tests1_product():
     return Product(name="Банан",
-                   description="Чтобы сесть",
+                   description="Чтобы съесть",
                    price=123.12,
                    quantity=2)
