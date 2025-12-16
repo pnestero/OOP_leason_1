@@ -15,6 +15,11 @@ class Category:
         Category.count_categories += 1
         Category.count_products += len(self.__products)
 
+    def __str__(self):
+        total_sum = sum(product.quantity for product in self.__products)
+        return f"{self.name}, количество продуктов: {total_sum} шт."
+
+
     def add_product(self, product):
         """Добавление в класс Category списка продуктов """
         if isinstance(product, Product):
@@ -29,17 +34,42 @@ class Category:
     def products(self):
         product_strings = []
         for product in self.__products:
-            product_strings.append(f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт.")
+            product_strings.append(f"{str(product)}")
         return "\n".join(product_strings)
+
+    def total_cost(self):
+        total = 0
+        for product in self.__products:
+            total += product.price * product.quantity
+        return total
+
 
 
 # if __name__ == "__main__":
-#     products = Product(
+#     productss = Product(
 #     "Смартфоны",
-#     "Смартфоны, как средство не только коммуникации, но и получение дополнительных функций для удобства жизни",
-#     "Samsung Galaxy C23 Ultra",
-#     "121")
+#     "Смартфоны",
+#     111,
+#     2)
 #
-#     print(Category.description)
-#     print(Category.name)
-#     print(Category.products)
+#     productss2 = Product(
+#     "Смартфоны",
+#     "Смартфоны, как ",
+#     222000,
+#     2)
+#
+#     productss3 = Product(
+#     "Смартфоны",
+#     "Смартфоны, как средство жизни",
+#     333000000,
+#     2)
+#
+#
+#
+#     products = [productss, productss2, productss3]
+#     total_cost = sum(product.price * product.quantity for product in products)
+#     print(f"Общая стоимость товаров на складе: {total_cost} руб.")
+#
+#
+#     print(total_cost)
+
