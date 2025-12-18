@@ -43,3 +43,26 @@ def test_setter_price_n(tests1_product):
     with patch("builtins.input", return_value="n"):
         tests1_product.price = 100
         assert tests1_product.price == 123.12
+
+def test_add(tests1_product, tests2_product):
+    assert tests1_product + tests2_product == 846.24
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

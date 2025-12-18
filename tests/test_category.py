@@ -16,6 +16,10 @@ def test_category_add_product(tests1_category):
     assert len(tests1_category.get_products) == 2
 
 def test_category_products(tests1_category):
-    assert tests1_category.products == "Банан, 123.12 руб. Остаток: 2 шт."
+    assert tests1_category.products == "Банан, 123.12 руб. Остаток: 2"
 
+def test_str(tests1_category):
+    assert str(tests1_category) == "Телевизор, количество продуктов: 2 шт."
 
+def test_total_cost(tests1_category_total_cost):
+    assert tests1_category_total_cost.total_cost() == 738.72
