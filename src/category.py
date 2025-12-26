@@ -5,7 +5,7 @@ class Category:
     description: str
     __products: list[Product]
     count_categories = 0
-    count_products = 0
+    product_count = 0
 
     def __init__(self, name, description, init_products):
         """Инициализация класса"""
@@ -13,7 +13,7 @@ class Category:
         self.description = description
         self.__products = init_products if init_products else []
         Category.count_categories += 1
-        Category.count_products += len(self.__products)
+        Category.product_count += len(self.__products)
 
     def __str__(self):
         total_sum = sum(product.quantity for product in self.__products)
@@ -24,7 +24,9 @@ class Category:
         """Добавление в класс Category списка продуктов """
         if isinstance(product, Product):
             self.__products.append(product)
-            Category.count_products += 1
+            Category.product_count += 1
+        else:
+            raise TypeError
 
     @property
     def get_products(self):
