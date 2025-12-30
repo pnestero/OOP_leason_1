@@ -19,7 +19,6 @@ class Category:
         total_sum = sum(product.quantity for product in self.__products)
         return f"{self.name}, количество продуктов: {total_sum} шт."
 
-
     def add_product(self, product):
         """Добавление в класс Category списка продуктов """
         if isinstance(product, Product):

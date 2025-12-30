@@ -12,7 +12,7 @@ class Smartphone(Product):
         self.color = color
 
     def __add__(self, other):
-        if isinstance(other, self.__class__):
-            return self.quantity + other.quantity
-        raise TypeError("Нельзя складывать разные типы продуктов")
+        if type(other) is Smartphone:
+            return (self.price * self.quantity) + (other.price * other.quantity)
+        raise TypeError
 
