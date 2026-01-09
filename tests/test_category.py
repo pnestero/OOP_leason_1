@@ -5,7 +5,7 @@ def test_init_category(tests1_category):
     assert tests1_category.name == "Телевизор"
     assert tests1_category.description == "Samsung"
     assert tests1_category.count_categories == 1
-    assert tests1_category.count_products == 1
+    assert tests1_category.product_count == 1
 
 def test_category_add_product(tests1_category):
     assert len(tests1_category.get_products) == 1
