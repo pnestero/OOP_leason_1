@@ -4,7 +4,7 @@ class Category:
     name: str
     description: str
     __products: list[Product]
-    count_categories = 0
+    category_count = 0
     product_count = 0
 
     def __init__(self, name, description, init_products):
@@ -12,7 +12,7 @@ class Category:
         self.name = name
         self.description = description
         self.__products = init_products if init_products else []
-        Category.count_categories += 1
+        Category.category_count += 1
         Category.product_count += len(self.__products)
 
     def __str__(self):
