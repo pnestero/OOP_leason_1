@@ -59,6 +59,7 @@ def tests1_category_total_cost():
                                 price=123.12,
                                 quantity=2)])
 
+
 # Фикстуры для тестирования класса Smartphone
 @pytest.fixture
 def tests_smartphone_1():
@@ -70,6 +71,7 @@ def tests_smartphone_1():
                       model="Galaxy",
                       memory="16 GB",
                       color="red")
+
 
 # Фикстуры для тестирования класса Smartphone
 @pytest.fixture
@@ -83,24 +85,46 @@ def tests_smartphone_2():
                       memory="512GB",
                       color="Белый")
 
+
 # Тестирование класса LawnGrass
 @pytest.fixture
 def tests_lawngrass_1():
     return LawnGrass(name="Газон многолетний",
-                      description="Газон",
-                      price=125,
-                      quantity=99,
-                      country="Rus",
-                      germination_period="сентябрь",
-                      color="Зеленый")
+                     description="Газон",
+                     price=125,
+                     quantity=99,
+                     country="Rus",
+                     germination_period="сентябрь",
+                     color="Зеленый")
+
 
 # Тестирование класса LawnGrass
 @pytest.fixture
 def tests_lawngrass_2():
     return LawnGrass(name="Газон на 1 год",
-                      description="Газон",
-                      price=100,
-                      quantity=50,
-                      country="Japan",
-                      germination_period="май",
-                      color="Светло-зеленый")
+                     description="Газон",
+                     price=100,
+                     quantity=50,
+                     country="Japan",
+                     germination_period="май",
+                     color="Светло-зеленый")
+
+
+@pytest.fixture
+def tests1_category_average_price():
+    return Category(name="Телевизор",
+                    description="Samsung",
+                    init_products=[Product(name="Банан",
+                                           description="Чтобы съесть",
+                                           price=123.12,
+                                           quantity=2)])
+
+
+@pytest.fixture
+def tests2_category_average_price():
+    return Category(name="Телефон",
+                    description="program developer",
+                    init_products=[Product(name="Банан",
+                                      description="Чтобы съесть",
+                                      price=0,
+                                      quantity=1)])
