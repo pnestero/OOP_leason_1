@@ -63,35 +63,35 @@ class Category:
             return 0
 
 
-if __name__ == "__main__":
-    productss = Product(
-    "Смартфоны",
-    "Смартфоны",
-    111,
-    2)
-
-    productss2 = Product(
-    "Смартфоны",
-    "Смартфоны, как ",
-    222000,
-    2)
-
-    productss3 = Product(
-    "Смартфоны",
-    "Смартфоны, как средство жизни",
-    333000000,
-    2)
-
-    products = [productss, productss2, productss3]
-
-    total_cost = sum(product.price * product.quantity for product in products)
-    print(f"Общая стоимость товаров на складе: {total_cost} руб.")
-
-
-    print(total_cost)
-
-    category = Category("Смартфоны", "Описание категории", products)
-    print(category.average_price())
-
-    category = Category("Смартфоны", "Описание категории", products)
-    category.add_product = category
+# if __name__ == "__main__":
+#     productss = Product(
+#     "Смартфоны",
+#     "Смартфоны",
+#     111,
+#     2)
+#
+#     productss2 = Product(
+#     "Смартфоны",
+#     "Смартфоны, как ",
+#     222000,
+#     2)
+#
+#     productss3 = Product(
+#     "Смартфоны",
+#     "Смартфоны, как средство жизни",
+#     333000000,
+#     2)
+#
+#     products = [productss, productss2, productss3]
+#
+#     total_cost = sum(product.price * product.quantity for product in products)
+#     print(f"Общая стоимость товаров на складе: {total_cost} руб.")
+#
+#
+#     print(total_cost)
+#
+#     category = Category("Смартфоны", "Описание категории", products)
+#     print(category.average_price())
+#
+#     category = Category("Смартфоны", "Описание категории", products)
+#     category.add_product = category
