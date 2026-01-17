@@ -1,4 +1,5 @@
-from typing import Optional, Any
+from typing import Any, Optional
+
 from src.base_product import BaseProduct
 from src.print_mixin import ProductMixin
 
@@ -30,9 +31,8 @@ class Product(BaseProduct, ProductMixin):
             name=product.get("name", ""),
             description=product.get("description", ""),
             price=product.get("price", 0),
-            quantity=product.get("quantity", 0)
+            quantity=product.get("quantity", 0),
         )
-
 
     @property
     def price(self):
@@ -43,12 +43,13 @@ class Product(BaseProduct, ProductMixin):
         if new_price <= 0:
             print(f"Цена не должна быть нулевая или отрицательная")
         elif new_price < self.__price:
-            say_new_price = input("Понизить цену товара? Введите 'у/n' если 'да/нет'.").lower()
+            say_new_price = input(
+                "Понизить цену товара? Введите 'у/n' если 'да/нет'."
+            ).lower()
             if say_new_price == "y":
                 self.__price = new_price
         else:
             self.__price = new_price
-
 
 
 # if __name__ == "__main__":
@@ -79,5 +80,5 @@ class Product(BaseProduct, ProductMixin):
 #     print(f"Общая стоимость товаров на складе: {total_cost} руб.")
 #
 
-    # product3 = Product("Товар2", "Описание2", 2, 0)
-    # print(product3.quantity)
+# product3 = Product("Товар2", "Описание2", 2, 0)
+# print(product3.quantity)

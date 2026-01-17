@@ -1,5 +1,5 @@
-from src.products import Product
 from src.exceptions import ZeroErrorProduct
+from src.products import Product
 
 
 class Category:
@@ -22,7 +22,7 @@ class Category:
         return f"{self.name}, количество продуктов: {total_sum} шт."
 
     def add_product(self, product):
-        """Добавление в класс Category списка продуктов """
+        """Добавление в класс Category списка продуктов"""
         if isinstance(product, Product):
             try:
                 if product.quantity == 0:
@@ -56,12 +56,13 @@ class Category:
         return total
 
     def middle_price(self):
-        "Средняя цена товаров "
+        "Средняя цена товаров"
         try:
-            return sum([product.price for product in self.__products]) / len(self.__products)
+            return sum([product.price for product in self.__products]) / len(
+                self.__products
+            )
         except ZeroDivisionError:
             return 0
-
 
 
 # if __name__ == "__main__":

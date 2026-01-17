@@ -1,5 +1,7 @@
-from src.smartphone import Smartphone
 import pytest
+
+from src.smartphone import Smartphone
+
 
 def test_smartphone_init(tests_smartphone_1):
     """Инициализация класса"""
@@ -12,9 +14,11 @@ def test_smartphone_init(tests_smartphone_1):
     assert tests_smartphone_1.memory == "16 GB"
     assert tests_smartphone_1.color == "red"
 
+
 def test_smartphone_add(tests_smartphone_1, tests_smartphone_2):
     """Сложение двух объектов класса"""
     assert tests_smartphone_1 + tests_smartphone_2 == 10800000
+
 
 def test_smartphone_add_error(tests_smartphone_1, tests_smartphone_2):
     """Ошибка при сложении двух объектов класса"""
