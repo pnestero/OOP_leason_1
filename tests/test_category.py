@@ -24,9 +24,9 @@ def test_str(tests1_category):
 def test_total_cost(tests1_category_total_cost):
     assert tests1_category_total_cost.total_cost() == 738.72
 
-def test_average_price(tests1_category_average_price, tests2_category_average_price):
-    assert tests1_category_average_price.average_price() == 123.12
-    assert tests2_category_average_price.average_price() == 0.0
+def test_middle_price(tests1_category_average_price, tests2_category_average_price):
+    assert tests1_category_average_price.middle_price() == 123.12
+    assert tests2_category_average_price.middle_price() == 0.0
 
 
 def test_custom_exception(capsys, tests1_category_average_price):
