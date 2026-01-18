@@ -1,5 +1,4 @@
 from src.products import Product
-from src.smartphone import Smartphone
 
 
 class LawnGrass(Product):

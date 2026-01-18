@@ -19,4 +19,4 @@ def test_lawngrass_add(tests_lawngrass_1, tests_lawngrass_2):
 
 def test_lawngrass_add_error(tests_lawngrass_1):
     with pytest.raises(TypeError):
-        result = tests_lawngrass_1 + 1
+        _ = tests_lawngrass_1 + 1

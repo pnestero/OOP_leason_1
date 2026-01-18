@@ -41,7 +41,7 @@ class Product(BaseProduct, ProductMixin):
     @price.setter
     def price(self, new_price):
         if new_price <= 0:
-            print(f"Цена не должна быть нулевая или отрицательная")
+            print("Цена не должна быть нулевая или отрицательная")
         elif new_price < self.__price:
             say_new_price = input(
                 "Понизить цену товара? Введите 'у/n' если 'да/нет'."

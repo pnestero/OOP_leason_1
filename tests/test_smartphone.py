@@ -1,7 +1,5 @@
 import pytest
 
-from src.smartphone import Smartphone
-
 
 def test_smartphone_init(tests_smartphone_1):
     """Инициализация класса"""
@@ -23,4 +21,4 @@ def test_smartphone_add(tests_smartphone_1, tests_smartphone_2):
 def test_smartphone_add_error(tests_smartphone_1, tests_smartphone_2):
     """Ошибка при сложении двух объектов класса"""
     with pytest.raises(TypeError):
-        result = tests_smartphone_1 + 1
+        _ = tests_smartphone_1 + 1

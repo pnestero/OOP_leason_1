@@ -1,5 +1,4 @@
 import pytest
-from more_itertools.recipes import quantify
 
 from src.category import Category
 from src.lawngrass import LawnGrass
