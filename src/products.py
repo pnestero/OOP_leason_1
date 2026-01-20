@@ -1,4 +1,5 @@
-from typing import Optional, Any
+from typing import Any, Optional
+
 from src.base_product import BaseProduct
 from src.print_mixin import ProductMixin
 
@@ -9,7 +10,11 @@ class Product(BaseProduct, ProductMixin):
         self.name = name
         self.description = description
         self.__price = price
-        self.quantity = quantity
+
+        if quantity != 0:
+            self.quantity = quantity
+        else:
+            raise ValueError("Товар с нулевым количеством не может быть добавлен")
         super().__init__()
 
     def __str__(self):
@@ -26,9 +31,8 @@ class Product(BaseProduct, ProductMixin):
             name=product.get("name", ""),
             description=product.get("description", ""),
             price=product.get("price", 0),
-            quantity=product.get("quantity", 0)
+            quantity=product.get("quantity", 0),
         )
-
 
     @property
     def price(self):
@@ -37,20 +41,22 @@ class Product(BaseProduct, ProductMixin):
     @price.setter
     def price(self, new_price):
         if new_price <= 0:
-            print(f"Цена не должна быть нулевая или отрицательная")
+            print("Цена не должна быть нулевая или отрицательная")
         elif new_price < self.__price:
-            say_new_price = input("Понизить цену товара? Введите 'у/n' если 'да/нет'.").lower()
+            say_new_price = input(
+                "Понизить цену товара? Введите 'у/n' если 'да/нет'."
+            ).lower()
             if say_new_price == "y":
                 self.__price = new_price
         else:
             self.__price = new_price
 
 
-
 # if __name__ == "__main__":
 #     product1 = {
 #         "name": "Samsung Galaxy C23 Ultra",
-#         "description": "Смартфоны, как средство не только коммуникации, но и получение дополнительных функций для удобства жизни",
+#         "description": "Смартфоны, как средство не только коммуникации, "
+#                        "но и получение дополнительных функций для удобства жизни",
 #         "price": 30000,
 #         "quantity": 121}
 #
@@ -72,4 +78,7 @@ class Product(BaseProduct, ProductMixin):
 #     print(product1, product2, total_cost)
 #     print("~"*50)
 #     print(f"Общая стоимость товаров на складе: {total_cost} руб.")
+#
 
+# product3 = Product("Товар2", "Описание2", 2, 0)
+# print(product3.quantity)

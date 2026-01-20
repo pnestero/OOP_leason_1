@@ -1,5 +1,6 @@
 import pytest
 
+
 def test_lawngrass_init(tests_lawngrass_1):
     """Инициализация класса"""
     assert tests_lawngrass_1.name == "Газон многолетний"
@@ -10,10 +11,12 @@ def test_lawngrass_init(tests_lawngrass_1):
     assert tests_lawngrass_1.germination_period == "сентябрь"
     assert tests_lawngrass_1.color == "Зеленый"
 
+
 def test_lawngrass_add(tests_lawngrass_1, tests_lawngrass_2):
     """Тестирование на сложение двух объектов класса"""
     assert tests_lawngrass_1 + tests_lawngrass_2 == 17375
 
+
 def test_lawngrass_add_error(tests_lawngrass_1):
     with pytest.raises(TypeError):
-        result = tests_lawngrass_1 + 1
+        _ = tests_lawngrass_1 + 1
